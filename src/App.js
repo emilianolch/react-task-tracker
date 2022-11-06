@@ -2,10 +2,9 @@ import { useState } from "react";
 import Header from "./components/Header";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
-import mockTasks from "./mockTasks";
 
 function App() {
-  const [tasks, setTasks] = useState(mockTasks);
+  const [tasks, setTasks] = useState([]);
 
   const taskActions = {
     delete: (id) => {
@@ -21,8 +20,7 @@ function App() {
   };
 
   const addTask = (task) => {
-    const id = tasks.length === 0 ? 1 : Math.max(...tasks.map((t) => t.id)) + 1;
-    setTasks([...tasks, { ...task, id: id }]);
+    setTasks([...tasks, { ...task, id: Math.random() }]);
     console.log(task);
   };
 

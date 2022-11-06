@@ -40,7 +40,7 @@ const AddTask = ({ submitTask }) => {
           <label htmlFor="reminder">Reminder</label>
         </div>
       </div>
-      <Button text="Add task" action={addTask} />
+      <Button text="Save task" action={addTask} />
     </form>
   );
 };
