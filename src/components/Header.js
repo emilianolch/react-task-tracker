@@ -1,5 +1,11 @@
+import { Link } from "react-router-dom";
+
 export const Header = () => {
-  return <h1 className="text-3xl font-medium text-center">Task Tracker</h1>;
+  return (
+    <Link to="/" className="block text-3xl font-medium text-center">
+      Task Tracker
+    </Link>
+  );
 };
 
 export default Header;

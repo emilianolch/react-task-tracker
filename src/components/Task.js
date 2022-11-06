@@ -6,7 +6,7 @@ const Task = ({ task, actions }) => {
     <div
       className={`${
         task.reminder ? "bg-blue-100" : "bg-gray-100"
-      } p-1 flex justify-between items-center`}
+      } px-2.5 py-1 flex justify-between items-center`}
     >
       <div>
         <p className="font-medium">{task.text}</p>
