@@ -2,16 +2,17 @@ import { useState } from "react";
 import Button from "./Button";
 
 const AddTask = ({ submitTask }) => {
-  const [task, setTask] = useState({});
+  const [task, setTask] = useState({ reminder: false });
   const setText = (event) => setTask({ ...task, text: event.target.value });
   const setDay = (event) => setTask({ ...task, day: event.target.value });
-  const setReminder = (event) =>
+  const setReminder = (event) => {
     setTask({ ...task, reminder: event.target.checked });
+  };
   const addTask = (event) => {
     event.preventDefault();
     if (task.text && task.day) {
       submitTask(task);
-      // event.target.closest("form").reset();
+      event.target.closest("form").reset();
     }
   };
 
@@ -33,6 +34,7 @@ const AddTask = ({ submitTask }) => {
         <div className="flex space-x-2 items-center">
           <input
             type="checkbox"
+            defaultChecked={task.reminder}
             onInput={setReminder}
             id="reminder"
             className="h-4 w-4 inline-block border border-gray-300 rounded shadow"

@@ -13,7 +13,7 @@ const Task = ({ task, actions }) => {
         <p className="mb-3">{task.day}</p>
         <Toggle
           checked={task.reminder}
-          onToggle={() => actions.toggleReminder(task.id)}
+          onToggle={() => actions.toggleReminder(task)}
         />
       </div>
       <FaTimes
